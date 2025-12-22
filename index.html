@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Chat with Video Calls</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="loginBox" class="box">
+  <div class="logo">
+    <i class="fas fa-comments"></i>
+    <h2>Private Chat</h2>
+  </div>
+  
+  <div class="input-group">
+    <i class="fas fa-envelope"></i>
+    <input id="email" type="email" placeholder="Your Email" autocomplete="email">
+  </div>
+  
+  <div class="input-group">
+    <i class="fas fa-lock"></i>
+    <input id="password" type="password" placeholder="Password" autocomplete="current-password">
+  </div>
+  
+  <button class="btn-login" onclick="login()">
+    <i class="fas fa-sign-in-alt"></i> Login
+  </button>
+  
+  <div class="demo-info">
+    <p><strong>Demo Credentials:</strong></p>
+    <p>Email: user1@test.com / user2@test.com</p>
+    <p>Password: 123456 (for both)</p>
+  </div>
+</div>
+
+<!-- CHAT SCREEN -->
+<div id="chatBox" class="box" style="display:none;">
+  <!-- HEADER -->
+  <div class="chat-header">
+    <div class="user-info">
+      <i class="fas fa-user-circle"></i>
+      <span id="currentUserEmail">User</span>
+    </div>
+    <button class="btn-logout" onclick="logout()">
+      <i class="fas fa-sign-out-alt"></i> Logout
+    </button>
+  </div>
+
+  <!-- MESSAGES AREA -->
+  <div id="messages" class="chat-area"></div>
+
+  <!-- CALL CONTROLS -->
+  <div id="callControls">
+    <div class="call-buttons">
+      <button class="btn-call audio" onclick="startAudioCall()" title="Audio Call">
+        <i class="fas fa-phone"></i> Audio Call
+      </button>
+      <button class="btn-call video" onclick="startVideoCall()" title="Video Call">
+        <i class="fas fa-video"></i> Video Call
+      </button>
+      <button class="btn-call end" onclick="endCall()" title="End Call" style="display:none;">
+        <i class="fas fa-phone-slash"></i> End Call
+      </button>
+    </div>
+    
+    <!-- VIDEO AREA -->
+    <div id="videoContainer" style="display:none;">
+      <div class="video-grid">
+        <div class="video-box">
+          <h4><i class="fas fa-user"></i> You</h4>
+          <video id="localVideo" autoplay muted playsinline></video>
+          <div class="video-controls">
+            <button class="btn-video-control" onclick="toggleVideo()">
+              <i class="fas fa-video"></i> Video
+            </button>
+            <button class="btn-video-control" onclick="toggleAudio()">
+              <i class="fas fa-microphone"></i> Audio
+            </button>
+          </div>
+        </div>
+        
+        <div class="video-box">
+          <h4><i class="fas fa-user-friends"></i> Other User</h4>
+          <video id="remoteVideo" autoplay playsinline></video>
+          <div class="video-status" id="callStatus">
+            Connecting...
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- INCOMING CALL -->
+    <div id="incomingCallAlert" class="incoming-call" style="display:none;">
+      <div class="call-alert">
+        <i class="fas fa-phone-volume fa-2x"></i>
+        <h3>Incoming Call!</h3>
+        <p id="callerInfo">Someone is calling...</p>
+        <div class="call-actions">
+          <button class="btn-accept" onclick="acceptCall()">
+            <i class="fas fa-phone"></i> Accept
+          </button>
+          <button class="btn-reject" onclick="rejectCall()">
+            <i class="fas fa-phone-slash"></i> Reject
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MESSAGE INPUT -->
+  <div class="input-area">
+    <input id="msgInput" type="text" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+    <button class="btn-send" onclick="sendMessage()">
+      <i class="fas fa-paper-plane"></i> Send
+    </button>
+  </div>
+  
+  <!-- ONLINE USERS -->
+  <div class="online-users">
+    <h4><i class="fas fa-users"></i> Online Users</h4>
+    <ul id="onlineUsersList">
+      <li>Loading...</li>
+    </ul>
+  </div>
+</div>
+
+<!-- FIREBASE SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+<!-- APP SCRIPTS -->
+<script src="firebase-config.js"></script>
+<script src="webrtc-handler.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
